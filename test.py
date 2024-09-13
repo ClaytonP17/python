@@ -1,11 +1,20 @@
-print("You come to a cave.  Go in or go back?")
-choice=input("Type 1 for go in, Type 2 for go back")
-if choice=="1":
-    print("You walked into the cave, but it is dark.")
-    choice2=input("There is a torch.  Type 1 to use it.")
-    if choice2=="1":
-        print("You can see the cave.")
-    elif choice2=="2":
-        print("Something else")
-else:
-    print("You went back home.")
+import getpass
+
+P1 = getpass.getpass("Player 1, pick rock, paper, or scissors: ")
+P2 = getpass.getpass("Player 2, pick rock, paper, or scissors: ")
+
+if P1 not in ['rock', 'paper', 'scissors'] or P2 not in ['rock', 'paper', 'scissors']:
+    print("Invalid choice. Please run the game again and choose rock, paper, or scissors.")
+
+if P1==P2 :
+    print("It's a tie!")
+
+if (P1 == 'rock' and P2 == 'scissors') or \
+   (P1 == 'scissors' and P2 == 'paper') or \
+   (P1 == 'paper' and P2 == 'rock') :
+    print("Player 1 Wins!")
+
+if (P2 == 'rock' and P1 == 'scissors') or \
+   (P2 == 'scissors' and P1 == 'paper') or \
+   (P2 == 'paper' and P1 == 'rock') :
+    print("Player 2 Wins!")
